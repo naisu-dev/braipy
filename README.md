@@ -1,3 +1,5 @@
+# このライブラリはまだ作成中なので使用を推奨しません
+
 <div align = center><img src = "https://typograssy.deno.dev/api?text=Brai.py&comment=" alt = "brai.py"></div>
 
 # Brai.py  
