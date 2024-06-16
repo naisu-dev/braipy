@@ -1,11 +1,3 @@
-## - cording: utf-8 -
-
-'''
-①④
-②⑤
-③⑥
-'''
-
 import typing
 from .errors import *
    
