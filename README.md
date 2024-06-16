@@ -1,7 +1,6 @@
 # Brai.py
 ![GitHub License](https://img.shields.io/github/license/naisu-dev/braipy)
-![GitHub Created At](https://img.shields.io/github/created-at/naisu-dev/braipy)  
-
+![GitHub Created At](https://img.shields.io/github/created-at/naisu-dev/braipy)
 このライブラリを使用することで、pythonで点字を扱うことができます  
 いまのところ8点点字は使用できないのでご注意ください  
 また、このライブラリではブライユ式点字に則って  
