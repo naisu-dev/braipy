@@ -24,6 +24,7 @@ pip3 install git+https://github.com/naisu-dev/braipy.git
 ```python
 import braipy
 
+
 ## boolのリストからクラスを作成
 mytenji = braipy.Tenji([True, True, False, False, True, False])
 print(mytenji)
