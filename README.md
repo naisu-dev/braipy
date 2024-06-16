@@ -8,9 +8,10 @@
 このライブラリを使用することで、pythonで点字を扱うことができます  
 いまのところ8点点字は使用できないのでご注意ください  
 > [!NOTE]
-> また、このライブラリではブライユ式点字に則って、  
-> 左上から下に1,2,3 右上から下に4,5,6
-> という順番で使用してください
+> また、このライブラリではブライユ式点字に則って  
+> 左上から下に1,2,3 右上から下に4,5,6という順番で使用し  
+> 出っ張っているところをTrue、平らなところをFalseで表してください  
+> <b>⠫</b> &#8658; `[True, True, False, True, False, True]`
 > <table><tr><td>①</td><td>④</td></tr><tr><td>②</td><td>⑤</td></tr><tr><td>③</td><td>⑥</td></tr></table>
 
 
@@ -26,22 +27,20 @@ pip3 install git+https://github.com/naisu-dev/braipy.git
 ```python
 import braipy
 
-## boolのリストからクラスを作成
 
+## boolのリストからクラスを作成
 mytenji = braipy.Tenji([True, True, False, False, True, False])
 print(mytenji) # ⠓
 print(mytenji.data) # [True, True, False, False, True, False]
 
 
 ## クラスの一部変更  0: False  1: True  2: 現在から反対の状態にする
-
 mytenji = mytenji.push([2, 2, 2, 2, 1, 0])
 print(mytenji) # ⠜
 print(mytenji.data) # [False, False, True, True, True, False]
 
 
 ## テキストからクラスを作成
-
 mytenji = braipy.Tenji.tenjitext_to_cls("⠇")
 print(mytenji) # ⠇
 print(mytenji.data) # [True, True, True, False, False, False]
