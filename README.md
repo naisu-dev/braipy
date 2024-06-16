@@ -1,4 +1,4 @@
-<div align = center><h1>このライブラリはまだ作成途中なので、使用を推奨しません</h1></div>
+<div align = center><h1>このライブラリはまだ作成途中なので使用を推奨しません</h1></div>
 
 <div align = center><img src = "https://typograssy.deno.dev/api?text=Brai.py&comment=" alt = "brai.py"></div>
 
