@@ -1,4 +1,4 @@
-# - encording: utf-8 -
+## - cording: utf-8 -
 
 '''
 ①④
@@ -14,17 +14,34 @@ class Tenji:
     def __init__(self, data: typing.List[bool]):
         self.data = data
         for i in range(64):
-            if self.data == tuple([True if i == "1" else False for i in list((bin(i)[2:]).zfill(6))])[::-1]:
-                self.text = chr(int("28"+hex(i)[2:], 16))
-                print(chr(int("28"+hex(i)[2:], 16)))
+            if self.data == (list([True if i == "1" else False for i in list((bin(i)[2:]).zfill(6))])[::-1]):
+                self.text = chr(int("28"+(hex(i)[2:]).zfill(2), 16))
                 break
     
     def __str__(self):
         return self.text
     
-    def push(self, data: dict):
+    def push(self, data: typing.List[int] = [2, 2, 2, 2, 2, 2]):
+        org_data = self.data
+        if len(data) != 6:
+            # raise error
+            pass
+        else:
+            for i in range(6):
+                if data[i] == 0:
+                    org_data[i] = False
+                elif data[i] == 1:
+                    org_data[i] = True
+                elif data[i] == 2:
+                    if org_data[i] == True:
+                        org_data[i] = False
+                    else:
+                        org_data[i] = True
+        return Tenji(org_data)
+    
+    def translate(self, lang):
         pass
-        
+    
     @classmethod
     def tenjitext_to_cls(cls, text: str):
         s_16 = hex(ord(text))[2:]
@@ -43,6 +60,6 @@ class Tenji:
             data["6"] = True
         return cls(list(data.values()))
     
-# print(Tenji.tenjitext_to_cls("⠼").data)
-mytenji = [True, True, False, False, False, True]
-print(mytenji)
+    @classmethod
+    def text_to_cls():
+        pass
