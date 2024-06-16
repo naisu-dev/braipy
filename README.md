@@ -1,4 +1,4 @@
-<div align = center><img src = "https://typograssy.deno.dev/api?text=brai.py&comment=" alt = "brai.py"></div>
+<div align = center><img src = "https://typograssy.deno.dev/api?text=Brai.py&comment=" alt = "brai.py"></div>
 
 # Brai.py  
 ![GitHub License](https://img.shields.io/github/license/naisu-dev/braipy)
