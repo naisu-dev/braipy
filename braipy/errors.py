@@ -5,3 +5,7 @@ class BraipyException(Exception):
 class NotTenjiError(BraipyException):
   def __str__(self):
     return self.error_message
+
+class LenDifferentError(BraipyException):
+  def __str__(self):
+    return self.error_message
