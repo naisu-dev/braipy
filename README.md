@@ -24,15 +24,26 @@ pip3 install git+https://github.com/naisu-dev/braipy.git
 ```python
 import braipy
 
+## boolのリストからクラスを作成
 mytenji = braipy.Tenji([True, True, False, False, True, False])
 print(mytenji)
 print(mytenji.data)
 # ⠓
 # [True, True, False, False, True, False]
 
+
+## クラスの一部変更 0: False ,1: True ,2: 現在から反対の状態にする
 mytenji = mytenji.push([2, 2, 2, 2, 1, 0])
 print(mytenji)
 print(mytenji.data)
 # ⠜
 # [False, False, True, True, True, False]
+
+
+## テキストからクラスを作成
+mytenji = braipy.Tenji.tenjitext_to_cls("⠇")
+print(mytenji)
+print(mytenji.data)
+# ⠇
+# [True, True, True, False, False, False]
 ```
