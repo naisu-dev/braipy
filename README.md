@@ -1,10 +1,18 @@
 # Brai.py
 このライブラリを使用することで、pythonで点字を扱うことができます  
-いまのところ8点点字は使用できないのでご注意ください
+いまのところ8点点字は使用できないのでご注意ください  
+また、このライブラリはブライユ式点字に則って  
+①④  
+②⑤  
+③⑥  
+という順番で使用してください
 
 ## インストール
 ```bash
+# 環境によって使用するコマンドを変えてください
 pip install git+https://github.com/naisu-dev/braipy.git
+pip3 install git+https://github.com/naisu-dev/braipy.git
+
 ```
 
 ## 使用例
