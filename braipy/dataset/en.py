@@ -43,3 +43,6 @@ data = {
 for i in range(len(data)):
     for i_2 in range(6):
         data[list(data.keys())[i]][i_2] = bool(data[list(data.keys())[i]][i_2])
+
+def en():
+    return data
