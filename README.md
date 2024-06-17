@@ -51,5 +51,6 @@ print(mytenji.data) # [True, True, True, False, False, False]
 ## 辞書
 Braipyではオリジナルの辞書を用意しますが、独自の辞書を使用することもできます  
 ```python
-
+mydict = {"h": [True, True, True, True, True, True]}
+mytenji = Mytenji.text_to_cls("hello", mydict)
 ```
