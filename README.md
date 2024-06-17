@@ -48,6 +48,7 @@ print(mytenji) # ⠇
 print(mytenji.data) # [True, True, True, False, False, False]
 ```
 
+# -preview機能-
 ## 辞書
 Braipyではオリジナルの辞書を用意しますが、独自の辞書を使用することもできます  
 ```python
