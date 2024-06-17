@@ -52,12 +52,14 @@ print(mytenji.data) # [True, True, True, False, False, False]
 ## 辞書
 Braipyではオリジナルの辞書を用意しますが、独自の辞書を使用することもできます  
 ```python
+import braipy
+
 mydict = {
     "h": [True, True, True, True, True, True],
     "e": [True, False, False, False, True, True],
     "l": [True, False, True, False, True, True],
     "o": [False, True, False, False, True, True]
 }
-mytenji = Mytenji.text_to_cls("hello", mydict)
+mytenji = braipy.Mytenji.text_to_cls("hello", mydict)
 print(mytenji) # ["⠿", "⠱", "⠵", "⠵", "⠲"]  *クラスのリストが返っています
 ```
