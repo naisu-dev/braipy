@@ -1,8 +1,8 @@
 import typing
 from .errors import *
-from .dataset import en
+from .dataset.en import en
 
-transdata = {"en": en.en()}
+transdata = {"en": en()}
    
 class Tenji:
     tenji_list = [["1", "3", "5", "7", "9", "b", "d", "f"], ["2", "3", "6", "7", "a", "b", "e", "f"], ["8", "9", "a", "b", "c", "d", "e", "f"], ["4", "5", "6", "7", "c", "d", "e", "f"], ["1", "3"], ["2", "3"]]
