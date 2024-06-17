@@ -35,6 +35,9 @@ class Tenji:
                         org_data[i] = True
                 elif data[i] == 3:
                     pass
+                else:
+                    # raise error
+                    pass
         return Tenji(org_data)
     
     def translate(self, lang):
