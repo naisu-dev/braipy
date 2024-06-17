@@ -36,8 +36,8 @@ print(mytenji) # ⠓
 print(mytenji.data) # [True, True, False, False, True, False]
 
 
-## クラスの一部変更  0: False  1: True  2: 現在から反対の状態にする
-mytenji = mytenji.push([2, 2, 2, 2, 1, 0])
+## クラスの一部変更  0: False  1: True  2: 現在から反対の状態にする    3:現在のまま
+mytenji = mytenji.push([0, 2, 2, 2, 1, 3])
 print(mytenji) # ⠜
 print(mytenji.data) # [False, False, True, True, True, False]
 
