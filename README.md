@@ -60,6 +60,7 @@ mydict = {
     "l": [True, False, True, False, True, True],
     "o": [False, True, False, False, True, True]
 }
+
 mytenji = braipy.Mytenji.text_to_cls("hello", mydict)
 print(mytenji) # ["⠿", "⠱", "⠵", "⠵", "⠲"]  *クラスのリストが返っています
 ```
