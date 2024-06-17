@@ -14,7 +14,7 @@ class Tenji:
                 self.text = chr(int("28"+(hex(i)[2:]).zfill(2), 16))
                 break
     
-    def __str__(self):
+    def __repr__(self):
         return self.text
     
     def push(self, data: typing.List[int] = [2, 2, 2, 2, 2, 2]):
