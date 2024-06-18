@@ -9,3 +9,7 @@ class NotTenjiError(BraipyException):
 class LenDifferentError(BraipyException):
   def __str__(self):
     return self.error_message
+
+class NoLangError(BraipyException):
+  def __str__(self):
+    return self.error_message
