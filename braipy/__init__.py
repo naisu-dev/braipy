@@ -1,5 +1,4 @@
 from .main import *
-from .errors import *
 
 from .dataset import *
 
