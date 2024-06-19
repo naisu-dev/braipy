@@ -49,14 +49,7 @@ class Tenji:
     @classmethod
     def tenjitext_to_cls(cls, text: str):
         s_16 = hex(ord(text))[2:]
-        data = {
-            "1": False,
-            "2": False,
-            "3": False,
-            "4": False,
-            "5": False,
-            "6": False
-        }
+        data = {"1": False, "2": False, "3": False, "4": False, "5": False, "6": False}
         if s_16[3:] in Tenji.tenji_list[0]:  # upper left
             data["1"] = True
         if s_16[3:] in Tenji.tenji_list[1]:  # center left
