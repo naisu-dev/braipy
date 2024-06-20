@@ -42,10 +42,17 @@ print(mytenji) # ⠜
 print(mytenji.data) # [False, False, True, True, True, False]
 
 
-## テキストからクラスを作成
+## 点字のテキストからクラスを作成
 mytenji = braipy.Tenji.tenjitext_to_cls("⠇")
 print(mytenji) # ⠇
 print(mytenji.data) # [True, True, True, False, False, False]
+
+
+## 通常のテキストからクラスのリストを作成
+mytenji = braipy.Tenji.text_to_cls("helloworld", mode="traslate") #str.translateで変換
+mytenji = braipy.Tenji.text_to_cls("helloworld", mode="character") #独自の方法で変換
+## ２つのモードがあります　translateモードだと、辞書に無いテキストがあるとスルーしますが、characterモードだと、エラーが出ます
+print(mytenji) # [⠓, ⠑, ⠇, ⠇, ⠕, ⠺, ⠕, ⠗, ⠇, ⠙]
 ```
 
 # -alpha機能-
