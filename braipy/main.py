@@ -3,7 +3,7 @@ from .tenjidataset import data as transdata
 
 
 class Tenji:
-    tenji_list = [["1", "3", "5", "7", "9", "b", "d", "f"], ["2", "3", "6", "7", "a", "b", "e", "f"], ["8", "9", "a", "b", "c", "d", "e", "f"], ["4", "5", "6", "7", "c", "d", "e", "f"], ["1", "3"], ["2", "3"]]
+    tenji_list = [["1", "3", "5", "7", "9", "b", "d", "f"], ["2", "3", "6", "7", "a", "b", "e", "f"], ["8", "9", "a", "b", "c", "d", "e", "f"],["4", "5", "6", "7", "c", "d", "e", "f"], ["1", "3"], ["2", "3"]]
 
     def __init__(self, data: typing.List[bool]):
         if len(data) != 6:
@@ -70,8 +70,14 @@ class Tenji:
         if mode == "translate":
             for i in tenjidict.keys():
                 tenjidict[i] = Tenji(tenjidict[i]).text
-            return text.translate(str.maketrans(tenjidict))
+            return [Tenji.tenjitext_to_cls(i) for i in list(text.translate(str.maketrans(tenjidict)))]
         elif mode == "character":
-            pass
+            data = []
+            for i in list(text):
+                if i in tenjidict:
+                    data.append(Tenji(tenjidict[i]))
+                else:
+                    raise ValueError(f"{i}は辞書に登録されていません")
+            return data
         else:
             raise ValueError('Either "translate" or "character".')
