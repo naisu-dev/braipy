@@ -1,6 +1,7 @@
 # 参考： https://ja.wikipedia.org/wiki/英語の点字
 
-data = {
+data = { 
+    " ": [0, 0, 0, 0, 0, 0],
     "a": [1, 0, 0, 0, 0, 0],
     "b": [1, 1, 0, 0, 0, 0],
     "c": [1, 0, 0, 1, 0, 0],
@@ -43,6 +44,3 @@ data = {
 for i in range(len(data)):
     for i_2 in range(6):
         data[list(data.keys())[i]][i_2] = bool(data[list(data.keys())[i]][i_2])
-
-def en():
-    return data
