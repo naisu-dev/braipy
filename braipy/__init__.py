@@ -1,5 +1,5 @@
-from .main import *
+from .main import (Tenji)
 
-from .tenjidataset import *
+from .tenjidataset import (data)
 
 __version__ = '0.1'
