@@ -3,6 +3,7 @@
 <div align = center><img src = "https://typograssy.deno.dev/api?text=Brai.py&comment=" alt = "brai.py"></div>
 
 # Brai.py  
+[![braipy](https://github.com/naisu-dev/braipy/actions/workflows/blank.yml/badge.svg?branch=main)](https://github.com/naisu-dev/braipy/actions/workflows/blank.yml)
 ![GitHub License](https://img.shields.io/github/license/naisu-dev/braipy)
 ![GitHub Created At](https://img.shields.io/github/created-at/naisu-dev/braipy)
 ![GitHub forks](https://img.shields.io/github/forks/naisu-dev/braipy?style=flat)
