@@ -3,6 +3,8 @@ name: braipy
 
 # 発火タイミング
 on:
+  branch_protection_rule:
+    types: [created, deleted, edited]
   workflow_dispatch:
 
 jobs:
