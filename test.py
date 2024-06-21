@@ -20,7 +20,7 @@ print(mytenji.data) # [True, True, True, False, False, False]
 
 
 ## 通常のテキストからクラスのリストを作成
-mytenji = braipy.Tenji.text_to_cls("helloworld", mode="traslate") #str.translateで変換
+mytenji = braipy.Tenji.text_to_cls("helloworld", mode="translate") #str.translateで変換
 mytenji = braipy.Tenji.text_to_cls("helloworld", mode="character") #独自の方法で変換
 ## ２つのモードがあります　translateモードだと、辞書に無いテキストがあるとスルーしますが、characterモードだと、エラーが出ます
 print(mytenji) # [⠓, ⠑, ⠇, ⠇, ⠕, ⠺, ⠕, ⠗, ⠇, ⠙]
