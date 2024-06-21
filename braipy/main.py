@@ -75,7 +75,7 @@ class Tenji:
             data = []
             for i in list(text):
                 if i in tenjidict:
-                    data.append(Tenji(tenjidict[i]))
+                    data.append(Tenji.tenjitext_to_cls(tenjidict[i]))
                 else:
                     raise ValueError(f"{i} is not registered in the dictionary")
             return data
