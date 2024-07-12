@@ -9,57 +9,57 @@
 ![GitHub forks](https://img.shields.io/github/forks/naisu-dev/braipy?style=flat)
 [![Email](https://img.shields.io/badge/email-naisudevcontact@gmail.com-blue.svg?style=flat)](mailto:naisudevcontact@gmail.com)  
 
-このライブラリを使用することで、pythonで点字を扱うことができます  
-いまのところ8点点字は使用できないのでご注意ください  
+This library allows you to work with braille in python! 
+8 braille is not available at this time. 
 > [!NOTE]
-> また、このライブラリではブライユ式点字に則って  
-> 左上から下に1,2,3 右上から下に4,5,6という順番で使用し  
-> 出っ張っているところをTrue、平らなところをFalseで表してください  
+> Also, in this library, in accordance with the style of Braille.  
+> From upper left to upper right: 1,2,3, and from upper right to lower right: 4,5,6. 
+> The protruding part is denoted by "true" and the flat part by "false. 
 > <b>⠫</b> &#8658; `[True, True, False, True, False, True]`
 > <table><tr><td>①</td><td>④</td></tr><tr><td>②</td><td>⑤</td></tr><tr><td>③</td><td>⑥</td></tr></table>
 
 
-## インストール
+## Install
 ```bash
-# 環境によって使用するコマンドを変えてください
+# Use different commands depending on the environment
 pip install git+https://github.com/naisu-dev/braipy.git
 pip3 install git+https://github.com/naisu-dev/braipy.git
 
 ```
 
-## 使用例
+## Example of use
 ```python
 import braipy
 
 
-## boolのリストからクラスを作成
+## Create a class from a list of bools
 mytenji = braipy.Tenji([True, True, False, False, True, False])
 print(mytenji) # ⠓
 print(mytenji.data) # [True, True, False, False, True, False]
 
 
-## クラスの一部変更  0: False  1: True  2: 現在から反対の状態にする    3:現在のまま
+## Some class changes  0: False  1: True  2: To the opposite state from the present    3:as it is now
 mytenji = mytenji.push([0, 2, 2, 2, 1, 3])
 print(mytenji) # ⠜
 print(mytenji.data) # [False, False, True, True, True, False]
 
 
-## 点字のテキストからクラスを作成
+## Create classes from Braille text
 mytenji = braipy.Tenji.tenjitext_to_cls("⠇")
 print(mytenji) # ⠇
 print(mytenji.data) # [True, True, True, False, False, False]
 
 
-## 通常のテキストからクラスのリストを作成
-mytenji = braipy.Tenji.text_to_cls("helloworld", mode="translate") #str.translateで変換
-mytenji = braipy.Tenji.text_to_cls("helloworld", mode="character") #独自の方法で変換
-## ２つのモードがあります　translateモードだと、辞書に無いテキストがあるとスルーしますが、characterモードだと、エラーが出ます
+## Create a list of classes from normal text
+mytenji = braipy.Tenji.text_to_cls("helloworld", mode="translate") #Transformation with str.translate
+mytenji = braipy.Tenji.text_to_cls("helloworld", mode="character") #Convert in your own way
+## There are two modes. In translate mode, if there is text that is not in the dictionary, it will go through, but in character mode, an error will occur.
 print(mytenji) # [⠓, ⠑, ⠇, ⠇, ⠕, ⠺, ⠕, ⠗, ⠇, ⠙]
 ```
 
-# -alpha機能-
-## 辞書
-Braipyではオリジナルの辞書を用意しますが、独自の辞書を使用することもできます  
+# -Alpha function-
+## Dictionary
+Braipy will provide you with an original dictionary, but you can also use your own dictionary  
 ```python
 import braipy
 
@@ -71,5 +71,7 @@ mydict = {
 }
 
 mytenji = braipy.Mytenji.text_to_cls("hello", mydict)
-print(mytenji) # ["⠿", "⠱", "⠵", "⠵", "⠲"]  *クラスのリストが返っています
+print(mytenji) # ["⠿", "⠱", "⠵", "⠵", "⠲"]  *A list of classes is returned
 ```
+
+### This readme was translated from Japanese to English using deepl translation, so there may be some grammar errors.
