@@ -53,14 +53,8 @@ class Brail:
     def __init__(self, btext: str):
         self.text = btext
         self.dots = conv_brail(btext)
-        self.type = brailtype(len(self.dots))
+        self.type = brailtype(len(self.dots)) # ここのtypeは形式的なものです！
     
     @classmethod
-    def dots_from(cls, dots):
+    def dots_from(cls, dots: list[bool]):
         return cls(create_brail(dots))
-        
-
-my_brail = Brail.dots_from([0, 0, 0, 1, 1, 1, 0, 1])
-print(my_brail.dots)
-
-
