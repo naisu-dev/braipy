@@ -41,12 +41,25 @@ class Brail_6:
     def text_from(cls, btext: str):
         return cls(conv_brail(btext))
 
-class LangModel:
-    def __init__(self, file_path):
-        self.file_path = file_path
-        with open(file_path, "r") as f:
-            self.file = f.read()
+class BrailString:
+    def __init__(self, brail_list):
+        self.brail_list = brail_list
 
-my_brail = Brail_6([1, 1, 1, 0, 0, 1])
-print(my_brail.text)
+    @classmethod
+    def from_btext(cls, btext: str):
+        brail_list = [Brail_6.text_from(char) for char in btext]
+        return cls(brail_list)
 
+    def __str__(self):
+        return "".join(brail.text for brail in self.brail_list)
+
+    def __iter__(self):
+        return iter(self.brail_list)
+
+    def __len__(self):
+        return len(self.brail_list)
+
+    def __getitem__(self, index):
+        if isinstance(index, slice):
+            return BrailString(self.brail_list[index])
+        return self.brail_list[index]
