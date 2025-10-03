@@ -73,7 +73,26 @@ class BrailString:
         binary_codes = binary_string.split()
         brail_list = [Brail_6(code) for code in binary_codes]
         return cls(brail_list)
-
+    
+    @classmethod
+    def encode(cls, text, lang):
+        result_binary = []
+        i = 0
+        while i < len(text):
+            found_match = False
+            for key in lang.reverse:
+                if text.startswith(key, i):
+                    value = lang.reverse[key]
+                    result_binary.append(" ".join(value))
+                    i += len(key)
+                    found_match = True
+                    break
+            
+            if not found_match:
+                i += 1
+        
+        return " ".join(result_binary)
+    
     def __repr__(self):
         return "".join(brail.text for brail in self.brail_list)
 
@@ -104,7 +123,7 @@ class BrailString:
         else:
             return NotImplemented
 
-    def translate(self, lang: "Lang"):
+    def translate(self, lang):
         brail_dots_list = [brail.dots for brail in self.brail_list]
         result = ""
         i = 0
@@ -142,12 +161,34 @@ class BrailString:
 class Lang:
     def __init__(self, filepath):
         self.filepath = filepath
-        with open(filepath, "r") as f:
-            self.data = json.load(f)
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        self.reverse = self._invert_data(data)
+        self.data = data
+    
+    def __len__(self):
+        return len(self.reverse)
+
+    def _invert_data(self, data):
+        inverted = {}
+        def _recursive_invert(current_data, prefix=()):
+            for key, value in current_data.items():
+                if isinstance(value, dict):
+                    _recursive_invert(value, prefix + (key,))
+                else:
+                    inverted[value] = prefix + (key,)
+        _recursive_invert(data)
+        sorted_keys = sorted(inverted.keys(), key=len, reverse=True)
+        return {k: inverted[k] for k in sorted_keys}
+
+
 
 if __name__ == "__main__":
     Japanese = Lang("ja.json")
-    mybrail = BrailString.from_binary("000010 011101 010000 111010")
+    binary = (BrailString.encode("ぼっち", Japanese))
+    print(binary)
+    mybrail = BrailString.from_binary(binary)
     print(mybrail)
     decoded_text = mybrail.translate(Japanese)
     print(decoded_text)
