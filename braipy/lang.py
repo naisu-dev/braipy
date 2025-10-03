@@ -24,7 +24,7 @@ class Lang:
             return value, 1
     
     
-    def decode_message_recursive(self, text, error_m=" "):
+    def decode_message_recursive(self, text):
         data = text.split(" ")
         result = ""
         i = 0
@@ -35,13 +35,13 @@ class Lang:
                 result += found_char
                 i += consumed
             else:
-                result += error_m
+                result += "-"
                 i += 1
                 
         return result
 
 if __name__ == "__main__":
     Japanese = Lang("ja.json")
-    test_text = "100000 110000 000011 100001 000010 010011"
+    test_text = "000010 011101 010000 111010"
     decoded_text = Japanese.decode_message_recursive(test_text)
     print(decoded_text)
