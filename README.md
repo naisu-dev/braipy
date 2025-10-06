@@ -36,14 +36,6 @@ decoded_text = mybrail.translate(japanese)
 print(decoded_text)  # "ないす"
 ```
 
-## インストール方法
-
-```bash
-git clone https://github.com/naisu-dev/braipy.git
-cd braipy
-# 必要に応じて Python パッケージをインストール
-```
-
 ## ライセンス
 
 MIT License
