@@ -15,7 +15,6 @@ Braipy は、**Pythonで点字を扱うためのライブラリ**です。
 - **BrailString クラス**：点字文字列の表現、テキスト⇔点字変換・連結・スライス・デコードなど
 - **Lang クラス**：言語(例:日本語)ごとの点字辞書の取り扱い。JSON形式で定義
 - **エンコード/デコード**：テキストから点字への変換、点字からテキストへの復号
-- **サンプル**（`braipy/main.py`）
 
 ```python
 from braipy import Brail_6, BrailString, Lang
